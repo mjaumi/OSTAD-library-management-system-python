@@ -3,6 +3,10 @@ from read_book_list import read_book_list
 
 # function to delete books from CSV file declared here
 def delete_book():
+    print('\n---------------------------')
+    print('DELETE BOOK')
+    print('---------------------------\n')
+
     isbn = input("Enter The Book's ISBN You Want To Delete: ")
 
     book_list = read_book_list()

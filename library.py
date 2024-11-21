@@ -12,9 +12,13 @@ while True:
     print('3. Delete A Book')
     print('4. View All Books')
 
-    option = input('Select An Option: ')
+    option = input('\nChoose An Option: ')
 
     if option == '0':
+        print('\n----------------------------------------')
+        print('EXITING LIBRARY MANAGEMENT SYSTEM')
+        print('----------------------------------------\n')
+
         print('Thank You For Using Library Management System!!\n')
         break
 
@@ -25,10 +29,18 @@ while True:
         delete_book()
 
     elif option == '4':
+        print('\n---------------------------')
+        print('VIEW ALL BOOKS')
+        print('---------------------------\n')
+
         book_list = read_book_list()
 
-        for index, book in enumerate(book_list, 1):
-            print(f'{index}. Title: {book['title']} | Author: {book['author']} | ISBN: {book['isbn']} | Year: {book['year']} | Price: {book['price']} | Quantity: {book['quantity']}\n')
+        if len(book_list):
+            for index, book in enumerate(book_list, 1):
+                print(f'{index}. Title: {book['title']} | Author(s): {book['author']} | ISBN: {book['isbn']} | Year: {book['year']} | Price: {book['price']} | Quantity: {book['quantity']}')
+        else:
+            print('No Books Found!!')
 
+        print('\n')
     else:
         print('Please, Select A Valid Option!!\n')

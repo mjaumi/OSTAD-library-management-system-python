@@ -1,16 +1,34 @@
-from save_book_list import save_book_list
+from save_new_book import save_new_book
 
 def add_new_book():
+    authors = []
+
+    print('\n---------------------------')
+    print('ADD NEW BOOK')
+    print('---------------------------\n')
+
     # taking input to add new book here
     title = input("Enter Book's Title: ")
-    author = input("Enter Book's author Name: ")
+    authors.append(input("Enter Book's author Name: "))
+
+    # taking multiple author names as input here
+    while True:
+        option = input('Want To Add More Authors? (y/n): ')
+
+        if option.lower() == 'n':
+            break
+        elif option.lower() == 'y':
+            authors.append(input("Enter Book's author Name: "))
+        else:
+            print('Please, Select A Valid Option!!\n')
+
     isbn = input("Enter Book's ISBN Number: ")
     year = input("Enter Book's Publishing Year: ")
     price = float(input("Enter Book's Price: "))
     quantity = int(input("Enter Book's Quantity: "))
 
     # creating book list here
-    book = [title, author, isbn, year, price, quantity]
+    book = [title, ', '.join(authors) , isbn, year, price, quantity]
 
     # calling function to save the book in a CSV file here
-    save_book_list(book)
+    save_new_book(book)

@@ -1,9 +1,8 @@
 import os.path as path
 import csv
 
-# title, author(s), ISBN, publishing year, price, and quantity
-
-def save_book_list(book):
+# function to save newly added book into the CSV file declared here
+def save_new_book(book):
     # CSV file field names declared here
     field_names = ['Title', 'Author', 'ISBN', 'Year', 'Price', 'Quantity']
 
