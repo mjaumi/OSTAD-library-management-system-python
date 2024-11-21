@@ -1,3 +1,4 @@
+from read_book_list import read_book_list
 from save_new_book import save_new_book
 
 def add_new_book():
@@ -26,6 +27,15 @@ def add_new_book():
     year = input("Enter Book's Publishing Year: ")
     price = float(input("Enter Book's Price: "))
     quantity = int(input("Enter Book's Quantity: "))
+
+    book_list = read_book_list()
+
+    # making sure the uniqueness of the ISBN here
+    if len(book_list):
+        for book in book_list:
+            if book['isbn'] == isbn:
+                print('\nBook With Similar ISBN Already Exists!!\n')
+                return
 
     # creating book list here
     book = [title, ', '.join(authors) , isbn, year, price, quantity]
