@@ -1,4 +1,5 @@
 from add_new_book import  add_new_book
+from delete_book import delete_book
 from read_book_list import  read_book_list
 
 book_list = []
@@ -20,11 +21,14 @@ while True:
     elif option == '1':
         add_new_book()
 
-    elif option == '4':
-        book_list = read_book_list(book_list)
+    elif option == '3':
+        delete_book()
 
-        for book in book_list:
-            print(f'Title: {book[0]} | Author: {book[1]} | ISBN: {book[2]} | Year: {book[3]} | Price: {book[4]} | Quantity: {book[5]}\n')
+    elif option == '4':
+        book_list = read_book_list()
+
+        for index, book in enumerate(book_list, 1):
+            print(f'{index}. Title: {book['title']} | Author: {book['author']} | ISBN: {book['isbn']} | Year: {book['year']} | Price: {book['price']} | Quantity: {book['quantity']}\n')
 
     else:
-        print('Please, Select A Valid Option!!')
+        print('Please, Select A Valid Option!!\n')

@@ -5,7 +5,7 @@ import csv
 
 def save_book_list(book):
     # CSV file field names declared here
-    field_names = ['Title', 'Author', 'ISBN', 'Publishing Year', 'Price', 'Quantity']
+    field_names = ['Title', 'Author', 'ISBN', 'Year', 'Price', 'Quantity']
 
     if path.isfile('books_db.csv'):
         try:
