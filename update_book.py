@@ -34,24 +34,34 @@ def update_book():
                     break
                 elif option.lower() == 'y':
                     author_list = book['author'].split(', ')
+
                     while True:
                         for index, author in enumerate(author_list, 1):
                             print(f'{index}. {author}')
 
                         print(f'{len(author_list) + 1}. Add New Author')
+                        try:
+                            option = int(input('\nChoose An Option: '))
 
-                        option = int(input('\nChoose An Option: '))
+                            if option <= len(author_list):
+                                updated_author = input("Enter The Book's Updated Author: ")
+                                author_list[option - 1] = updated_author
 
-                        if option <= len(author_list):
-                            updated_author = input("Enter The Book's Updated Author: ")
-                            author_list[option - 1] = updated_author
+                            elif option == len(author_list) + 1:
+                                new_author = input("Enter The Book's New Author: ")
+                                author_list.append(new_author)
 
-                        elif option == len(author_list) + 1:
-                            new_author = input("Enter The Book's New Author: ")
-                            author_list.append(new_author)
+                            else:
+                                print('Please, Select A Valid Option!!\n')
+                                continue
 
-                        book['author'] = ', '.join(author_list)
+                        except Exception as e:
+                            print('Please, Select A Valid Option!!\n')
+                            continue
+
                         break
+
+                    book['author'] = ', '.join(author_list)
 
                     break
                 else:
