@@ -9,6 +9,7 @@ def delete_book():
 
     isbn = input("Enter The Book's ISBN You Want To Delete: ")
 
+    # fetching the book list from CSV file here
     book_list = read_book_list()
 
     for book in book_list:

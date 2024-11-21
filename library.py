@@ -1,6 +1,7 @@
 from add_new_book import  add_new_book
 from delete_book import delete_book
 from read_book_list import  read_book_list
+from update_book import update_book
 
 book_list = []
 
@@ -24,6 +25,9 @@ while True:
 
     elif option == '1':
         add_new_book()
+
+    elif option == '2':
+        update_book()
 
     elif option == '3':
         delete_book()
