@@ -1,3 +1,5 @@
+from add_new_book import  add_new_book
+
 book_list = []
 
 while True:
@@ -15,7 +17,7 @@ while True:
         break
 
     elif option == '1':
-        print('Thank You For Using Library Management System!!\n')
+        add_new_book()
 
     else:
         print('Please, Select A Valid Option!!')

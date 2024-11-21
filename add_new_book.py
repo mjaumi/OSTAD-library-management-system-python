@@ -1,4 +1,4 @@
-# title, author(s), ISBN, publishing year, price, and quantity
+from save_book_list import save_book_list
 
 def add_new_book():
     # taking input to add new book here
@@ -9,12 +9,8 @@ def add_new_book():
     price = float(input("Enter Book's Price: "))
     quantity = int(input("Enter Book's Quantity: "))
 
-    # creating book dictionary here
-    book = {
-        'title': title,
-        'author': author,
-        'isbn': isbn,
-        'year': year,
-        'price': price,
-        'quantity': quantity
-    }
+    # creating book list here
+    book = [title, author, isbn, year, price, quantity]
+
+    # calling function to save the book in a CSV file here
+    save_book_list(book)
