@@ -1,7 +1,6 @@
 import csv
 from utils import convert_list_to_dictionary
 
-
 # function to read all the books from CSV file declared here
 def read_book_list():
     try:

@@ -1,6 +1,7 @@
 from read_book_list import read_book_list
 from save_new_book import save_new_book
 
+# function to add new book into the CSV file declared here
 def add_new_book():
     print('\n---------------------------')
     print('ADD NEW BOOK')

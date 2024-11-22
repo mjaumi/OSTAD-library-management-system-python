@@ -1,7 +1,7 @@
 from mutate_book_list import mutate_book_list
 from read_book_list import read_book_list
 
-
+# function to update book into the CSV file declared here
 def update_book():
     print('\n---------------------------')
     print('UPDATE BOOK')
