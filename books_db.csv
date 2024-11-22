@@ -1,3 +1,4 @@
 Title,Author,ISBN,Year,Price,Quantity
-World,"Aumi, Adib",1234MJA,2024,33.99,20
-New Book,"Sijan, Rahim",1234SIZ,2025,500.00,30
+Book,"Aumi, Rafsan",MJA1234,2023,90.0,40
+New Book 2,Rafsan,RAF1234,2023,50.0,60
+Himu,Humayun,HUM1234,2025,600.99,200

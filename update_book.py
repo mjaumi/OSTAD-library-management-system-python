@@ -15,7 +15,7 @@ def update_book():
     for book in book_list:
         if book['isbn'] == isbn:
             while True:
-                option = input("Would You Like To Update The Book's Title? (y/n)")
+                option = input("Would You Like To Update The Book's Title? (y/n): ")
 
                 if option.lower() == 'n':
                     break
@@ -28,7 +28,7 @@ def update_book():
                     continue
 
             while True:
-                option = input("Would You Like To Update The Book's Author(s)? (y/n)")
+                option = input("Would You Like To Update The Book's Author(s)? (y/n): ")
 
                 if option.lower() == 'n':
                     break
@@ -44,8 +44,25 @@ def update_book():
                             option = int(input('\nChoose An Option: '))
 
                             if option <= len(author_list):
-                                updated_author = input("Enter The Book's Updated Author: ")
-                                author_list[option - 1] = updated_author
+                                while True:
+                                    print("\n1. Update Author's Name")
+                                    print("2. Delete Author's Name")
+
+                                    choice = input('\nChoose An Option: ')
+
+                                    if choice == '1':
+                                        updated_author = input("Enter The Book's Updated Author: ")
+                                        author_list[option - 1] = updated_author
+                                        break
+
+                                    elif choice == '2':
+                                        del author_list[option - 1]
+                                        print("\nAuthor's Name Deleted!!\n")
+                                        break
+
+                                    else:
+                                        print('\nPlease, Select A Valid Option!!')
+                                        continue
 
                             elif option == len(author_list) + 1:
                                 new_author = input("Enter The Book's New Author: ")
@@ -69,46 +86,58 @@ def update_book():
                     continue
 
             while True:
-                option = input("Would You Like To Update The Book's Publishing Year? (y/n)")
+                option = input("Would You Like To Update The Book's Publishing Year? (y/n): ")
 
                 if option.lower() == 'n':
                     break
                 elif option.lower() == 'y':
-                    new_year = input("Enter The Book's Updated Publishing Year: ")
-                    book['year'] = new_year
-                    break
+                    try:
+                        new_year = int(input("Enter The Book's Updated Publishing Year: "))
+                        book['year'] = new_year
+                        break
+                    except Exception as e:
+                        print('\nInvalid Publishing Year Input!!\n')
+                        continue
                 else:
                     print('Please, Select A Valid Option!!\n')
                     continue
 
             while True:
-                option = input("Would You Like To Update The Book's Price? (y/n)")
+                option = input("Would You Like To Update The Book's Price? (y/n): ")
 
                 if option.lower() == 'n':
                     break
                 elif option.lower() == 'y':
-                    new_price = input("Enter The Book's Updated Price: ")
-                    book['price'] = new_price
-                    break
+                    try:
+                        new_price = float(input("Enter The Book's Updated Price: "))
+                        book['price'] = new_price
+                        break
+                    except Exception as e:
+                        print('\nInvalid Price Input!!\n')
+                        continue
                 else:
                     print('Please, Select A Valid Option!!\n')
                     continue
 
             while True:
-                option = input("Would You Like To Update The Book's Quantity? (y/n)")
+                option = input("Would You Like To Update The Book's Quantity? (y/n): ")
 
                 if option.lower() == 'n':
                     break
                 elif option.lower() == 'y':
-                    new_quantity = input("Enter The Book's Updated Quantity: ")
-                    book['quantity'] = new_quantity
-                    break
+                    try:
+                        new_quantity = int(input("Enter The Book's Updated Quantity: "))
+                        book['quantity'] = new_quantity
+                        break
+                    except Exception as e:
+                        print('\nInvalid Quantity Input!!\n')
+                        continue
                 else:
                     print('Please, Select A Valid Option!!\n')
                     continue
 
             mutate_book_list(book_list)
-            print('Book Updated Successfully!!\n')
+            print('\nBook Updated Successfully!!\n')
             return
 
-    print('No Book Found Containing The Given ISBN Number!!\n')
+    print('\nNo Book Found Containing The Given ISBN Number!!\n')

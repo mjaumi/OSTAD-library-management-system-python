@@ -25,7 +25,7 @@ def add_new_book():
                 print('Please, Select A Valid Option!!\n')
 
         isbn = input("Enter Book's ISBN Number: ")
-        year = input("Enter Book's Publishing Year: ")
+        year = int(input("Enter Book's Publishing Year: "))
         price = float(input("Enter Book's Price: "))
         quantity = int(input("Enter Book's Quantity: "))
 

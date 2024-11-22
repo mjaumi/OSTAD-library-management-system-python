@@ -41,7 +41,7 @@ while True:
 
         if len(book_list):
             for index, book in enumerate(book_list, 1):
-                print(f'{index}. Title: {book['title']} | Author(s): {book['author']} | ISBN: {book['isbn']} | Year: {book['year']} | Price: {book['price']} | Quantity: {book['quantity']}')
+                print(f'{index}. Title: {book['title']} | Author(s): {book['author']} | ISBN: {book['isbn']} | Publishing Year: {book['year']} | Price: {book['price']} | Quantity: {book['quantity']}')
         else:
             print('No Books Found!!')
 

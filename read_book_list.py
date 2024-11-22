@@ -17,5 +17,8 @@ def read_book_list():
 
         return book_list
 
+    except FileNotFoundError as e:
+        return []
     except Exception as e:
         print('Something Went Wrong While Reading All The Books!!\n')
+        return []
