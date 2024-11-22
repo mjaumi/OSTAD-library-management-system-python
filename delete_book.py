@@ -16,7 +16,7 @@ def delete_book():
         if book['isbn'] == isbn:
             book_list.remove(book)
             mutate_book_list(book_list)
-            print('Book Deleted Successfully!!\n')
+            print('\nBook Deleted Successfully!!\n')
             return
 
     print('\nNo Book Found Containing The Given ISBN Number!!\n')
